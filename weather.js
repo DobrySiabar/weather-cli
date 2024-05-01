@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { getARgs } from './helpers/args.js'
+import { printHelp } from './services/log.service.js';
 
 const initCLI = () => {
     const args = getARgs(process.argv);
@@ -8,7 +9,7 @@ const initCLI = () => {
     
     // help
     if (args.h) {
-
+		printHelp();
     }
 
     // save city
