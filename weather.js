@@ -2,6 +2,7 @@
 
 import { getARgs } from './helpers/args.js'
 import { printHelp } from './services/log.service.js';
+import { saveKeyValue } from './services/storage.service.js';
 
 const initCLI = () => {
     const args = getARgs(process.argv);
@@ -9,7 +10,7 @@ const initCLI = () => {
     
     // help
     if (args.h) {
-		printHelp();
+	  	printHelp();  
     }
 
     // save city
@@ -19,7 +20,7 @@ const initCLI = () => {
 
     // save token
     if (args.t) {
-
+      saveKeyValue('token', args.t);
     }
     
     // print weather 
